@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Abdul Qadir Khan</h1>
+    <p>Developer | Creative Thinker</p>
+  </header>
+  <!-- Navigation Section -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#Experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#login">Login</a></li>
+    </ul>
+  </nav>
+  <!-- Home Section -->
+  <section id="home" class="section">
+    <h2>Welcome to My Portfolio</h2>
+    <p>Discover more about my journey and skills.</p>
+  </section>
+  
+  <!-- About Me Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>Hello! I'm Abdul qadir khan, an aspiring developer passionate about creating visually appealing and userfriendly
+      websites. I enjoy problem-solving and learning new technologies to enhance my skills.</p>
+    <img src="abdul ph .jpg" alt="abdul's Photo">
+  </section>
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2>My Skills</h2>
+    <ul>
+      <li> <span style="font-weight: bolder;">• Programming Languages: </span>C, JAVA, HTML, CSS</li>
+      <li><span style="font-weight: bolder;">• Machine Learning: </span>Convolutional Neural Network(CNN),[ResNet50 and VGG16 models</li>
+      <li><span style="font-weight: bolder;">• Tools & Technologies: </span> Adobe Photoshop, Microsoft Office, Vs Code,
+        CorelDRAW
+        </li>
+      <li> <span style="font-weight: bolder;">•   4C</span> -Communication, Collaboration, Critical Thinking and Creative Thinking</li>
+      <li> <span style="font-weight: bolder;">• Teamwork</span>
+      </li>
+      <li> <span style="font-weight: bolder;">• Problem Solving</span></li>
+    </ul>
+  </section>
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>My Minor Projects</h2>
+    <ul>
+      <h3>A personal portfolio to showcase my skills and projects</h3>
+      <li>
+        <strong><span style="font-weight: bolder;">Heart Disease Prediction Using CNN Model</span> <br>
+          
+          Under the project in-charge of - Assoc. Prof. Dr. Salim Istyaq
+          <br>
+          University Polytechnic,
+          Aligarh Muslim University  Aligarh.
+        </strong><br>
+        
+      </li>
+      <li>
+        <strong></strong><br>
+         
+    </ul>
+  </section>
+
+
+      <!-- //-----experience  -->
+  <section id="Experience" class="section">
+    <h2>Experience</h2>
+    <ul>
+      <h3>A personal portfolio to showcase my skills and Experience</h3>
+      <li>
+        <strong>• Currently working as a Developer and Designing at COMFY SPORTS Aligarh as a freelancer from 23 
+          Dec 2023 to till <br>
+          • Working as a Intern at India's No.1 Training & Internship Company ONLEI Technologies from 27 June 2024 
+          to 27 July 2024
+        </strong><br>
+        
+      </li>
+      <li>
+        <strong></strong><br>
+         
+    </ul>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>Email: aqk6394@gmail.com</p>
+    <p>Phone: +91-6394569711</p>
+    <p>Social Media: <a href="https://www.linkedin.com/in/abdul-qadir-khan-55a561283">LinkedIn</a> | <a href="#">GitHub</a></p>
+  </section>
+  </section> 
+
+  <section id="login" class="section">
+    <h2>login</h2>
+ 
+  <div id="login-container">
+   
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="login-error" style="color: rgb(212, 63, 63); display: none;">Invalid username or password. Try again!</p>
+</div>
+
+<div id="dashboard" style="display: none;">
+    <h2>Welcome, <span id="user-name"></span></h2>
+    <button onclick="showForm()">Create Your Portfolio</button>
+    <div id="portfolio-form" style="display: none;">
+        <input type="text" id="name" placeholder="Your Name">
+        <textarea id="bio" placeholder="Short Bio"></textarea>
+        <input type="text" id="skills" placeholder="Skills (comma separated)">
+        <input type="text" id="projects" placeholder="Projects (comma separated)">
+        <button onclick="createPortfolio()">Submit</button>
+    </div>
+    <div id="portfolio-container"></div>
+</div>
+</section>
+
+<script>
+    const user = {
+        username: "ABDUL",
+        password: "abdul78600"
+    };
+
+    function login() {
+        const enteredUsername = document.getElementById("username").value;
+        const enteredPassword = document.getElementById("password").value;
+        
+        if (enteredUsername === user.username && enteredPassword === user.password) {
+            alert("Login successful!");
+            document.getElementById("login-container").style.display = "none";
+            document.getElementById("dashboard").style.display = "block";
+            document.getElementById("user-name").innerText = enteredUsername;
+        } else {
+            document.getElementById("login-error").style.display = "block";
+        }
+    }
+
+    function showForm() {
+        document.getElementById("portfolio-form").style.display = "block";
+    }
+
+    function createPortfolio() {
+        const name = document.getElementById("name").value;
+        const bio = document.getElementById("bio").value;
+        const skills = document.getElementById("skills").value;
+        const projects = document.getElementById("projects").value;
+        
+        if (!name || !bio || !skills || !projects) {
+            alert("Please fill all fields.");
+            return;
+        }
+        
+        const portfolioCard = `
+            <div class="portfolio-card">
+                <h3>${name}</h3>
+                <p>${bio}</p>
+                <p><strong>Skills:</strong> ${skills}</p>
+                <p><strong>Projects:</strong> ${projects}</p>
+                <button onclick="deletePortfolio(this)">Delete</button>
+            </div>
+        `;
+        
+        document.getElementById("portfolio-container").innerHTML += portfolioCard;
+    }
+
+    function deletePortfolio(button) {
+        button.parentElement.remove();
+    }
+</script>
+</body>
+</html>
+  
+
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2025 abdul qadir khan. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

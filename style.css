@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 10 10;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+ }
+
+ h1, h2 {
+  color: #333;
+  /* text-align: center; */
+ }
+
+ ul {
+  list-style-type: none;
+  padding: 0;
+ }
+
+ a {
+  text-decoration: none;
+  color: #27507b;
+ }
+
+ /* Header Section */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #60bbb1;
+  color: white;
+ }
+
+ header h1 {
+  margin: 0;
+  font-size: 2.5em;
+ }
+
+ header p {
+  margin: 5px 0;
+  font-size: 1.2em;
+ }
+
+ /* Navigation Bar */
+nav {
+  background-color: #333;
+ }
+
+ nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 10px 0;
+ }
+
+ nav ul li {
+  margin: 0 15px;
+ }
+
+ nav ul li a {
+  color: white;
+  font-weight: bold;
+ }
+
+ /* Section Styles */
+.section {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  background: white;
+  border-radius: 80px;
+ }
+
+ .section img {
+  display: block;
+  margin: 10px auto;
+  max-width: 200px;
+  border-radius:8cm;
+  
+  /* border-radius: 50%; */
+ }
+
+ /* Footer Styles */
+ footer {
+  text-align: center;
+  padding: 10px;
+  background: #60bbb1;
+  color: white;
+  position: relative;
+  bottom:0;
+  width: 100%;
+ }
+button{
+  color:black;
+  background-color: #60bbb1;
+  padding-left: 0.2cm;
+  text-align: center;
+ margin: 0.2cm; 
+ border-radius: 0.9cm;
+
+}
